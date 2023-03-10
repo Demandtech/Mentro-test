@@ -19,23 +19,30 @@ const Main = () => {
       setIndex(0)
     }
   }, [sliders, index])
+  console.log(sliders)
   return (
     <main className='main-container'>
       <div className='bg-wrapper'>
-         <div className="dot-circle">
-            <div className="circel">
-               adfffdddd
-            </div>
-         </div>
+        <div className='dot-circle'>
+          <div className='smal-img-wrapper'>
+            {sliders.map((sl, ind) => {
+              return (
+                <div key={ind} className={`pag-img ${ind === index ? 'active-pag' : ''}`}>
+                  <img src={sl.img} alt={sl.name} />
+                </div>
+              )
+            })}
+          </div>
+        </div>
       </div>
       {sliders.map((slide, slideIndex) => {
-        const { rate, content, img, name, position } = slide
+        const { rate, content, img, name, position, id } = slide
         let pos = 'slider'
         if (slideIndex === index) {
           pos = 'active-Slide'
         }
         return (
-          <section key={sliders.id} className={`slide-wrapper ${pos}`}>
+          <section key={id} className={`slide-wrapper ${pos}`}>
             <article className='left'>
               <div className='left-wrapper'>
                 <p className='rate'>{rate}</p>
@@ -71,7 +78,7 @@ const Main = () => {
                     setIndex(index + 1)
                   }}
                 >
-                  <ArrowIcon slideIndex={slideIndex} className='icon' />
+                  <ArrowIcon className='icon' />
                 </button>
               </div>
               <NameSlide index={index} />

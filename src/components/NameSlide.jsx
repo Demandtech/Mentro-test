@@ -7,6 +7,7 @@ const NameSlide = ({index}) => {
       {details.map((sl, i) => {
         return (
           <div
+           key={i}
             className={`name-btn ${index === i ? 'active-name' : ''}`}
             style={{transform:`translateX(${100 * (i - index)}%)`}}
           >

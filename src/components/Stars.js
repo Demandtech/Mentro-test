@@ -8,7 +8,7 @@ const Stars = ({rate}) => {
   const number = index + 0.5
   return (
    <span key={index}>
-      {rate >= index + 1 ? <FullStarIcon className='icon'/> : rate >= number ? <HalfStarIcon className='icon'/> : null}
+      {+rate >= index + 1 ? <FullStarIcon className='icon'/> : +rate >= number ? <HalfStarIcon className='icon'/> : null}
    </span>
   )
  })
