@@ -1,38 +1,202 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --white: #ffffff;
+  --green: #c5f8c7;
+  --deepGreen: #4caf50;
+  --dark: #000000;
+  --transition: all 0.5s linear;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
+.bg-wrapper {
+  background: var(--green);
+  height: 1500px;
+  width: 1300px;
+  border-radius: 50%;
+  position: absolute;
+  top: -1100px;
+  right: -300px;
+}
+
+.slide-wrapper {
+  padding-left: 3rem;
+  position: absolute;
+  display: flex;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+  transition: var(--transition);
+}
+
+.left-wrapper {
+  margin-top: auto;
+}
+
+.slider .left {
+  opacity: 0;
+}
+
+.active-slide .left {
+  opacity: 1;
+}
+
+.rate {
+  font-weight: 700;
+  font-size: 60px;
+  letter-spacing: 0.015em;
+  color: var(--deepGreen);
+  padding-bottom: 0.8rem;
+}
+
+.stars {
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 2.7rem;
+  letter-spacing: 0.015em;
+  padding-bottom: 10px;
+}
+
+.position {
+  font-weight: 500;
+  font-size: 1.7rem;
+  letter-spacing: 0.015em;
+  padding-bottom: 30px;
+}
+
+.content {
+  font-size: 1.2rem;
+  line-height: 25px;
+  text-align: justify;
+  letter-spacing: 0.015em;
+  padding-bottom: 30px;
+}
+
+.book {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: justify;
+  letter-spacing: 0.015em;
+  background: var(--deepGreen);
+  color: var(--white);
+  padding: 10px 25px;
+  box-shadow: 2px 2px 25px 5px var(--deepGreen);
+}
+
+.right {
+  width: 60%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 4rem 2rem;
+}
+.right-wrapper {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.img-wrapper {
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img {
+  width: 100%;
+  transition: var(--transition);
+}
+
+.slider .img {
+  transform: scale(0.3);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.active-slide .img {
+  transform: scale(0.2);
+  opacity: 0;
+}
+
+.nav-btn {
+  all: unset;
+  background: var(--deepGreen);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.slider .nav-btn {
+  opacity: 0;
+}
+
+.nav-btn .icon {
+  height: 25px;
+}
+
+.names-wrapper {
+  width: 150px;
+  height: 50px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.name-btn {
+  position: absolute;
+  background: rgba(0, 162, 7, 0.17);
+  border-radius: 10px;
+  padding: 7px 15px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: 1s;
+  display: grid;
+  place-content: center;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.015em;
+}
+
+.slider .name-btn {
+  opacity: 0;
+}
+
+.dot-circle {
+  width: 1000px;
+  height: 1000px;
+  background-color: red;
+  z-index: 10000;
+  position: relative;
+  top: 0;
 }
