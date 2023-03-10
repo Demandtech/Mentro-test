@@ -1,2 +1,2 @@
 # Mentro Test
-![](/src/assets/scr)
+![](./src/assets/screenshot.png)
