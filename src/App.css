@@ -133,12 +133,10 @@
   justify-content: space-between;
 }
 
-.img-wrapper {
-}
-
 .img {
   width: 100%;
   transition: var(--transition);
+  transform: translateY(100px);
 }
 
 .slider .img {
@@ -216,7 +214,6 @@
 }
 
 .pag-img{
-  display: inline-block;
   position: absolute;
   max-width: 100px;
 }
@@ -253,7 +250,8 @@
 
 
 .active-pag{
-  order: 3
+  order: 3;
+  display: initial;
 }
 
 @media  screen and (max-width:700px) {

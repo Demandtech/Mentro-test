@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { details } from '../data'
 import Stars from './Stars'
 import { ReactComponent as ArrowIcon } from '../assets/arrow.svg'
@@ -27,7 +26,11 @@ const Main = () => {
           <div className='smal-img-wrapper'>
             {sliders.map((sl, ind) => {
               return (
-                <div key={ind} className={`pag-img ${ind === index ? 'active-pag' : ''}`}>
+                <div
+                  key={ind}
+                  className={`pag-img ${ind === index ? 'active-pag' : ''}`}
+                  style={{order:3}}
+                >
                   <img src={sl.img} alt={sl.name} />
                 </div>
               )
